@@ -4,6 +4,7 @@ import com.codecool.model.cake.Cake;
 import com.codecool.model.cake.ChimneyCake;
 import com.codecool.model.cake.Pancake;
 import com.codecool.model.oven.ChimenyCakeOven;
+import com.codecool.model.oven.Oven;
 import com.codecool.model.oven.PancakeOven;
 import com.codecool.service.CakeShop;
 
@@ -20,8 +21,11 @@ public class Main {
         Cake chimneyCake1 = new ChimneyCake(CHOCOLATE);
         Cake chimneyCake2 = new ChimneyCake(VANILLA);
 
-        ChimenyCakeOven chimenyCakeOven = new ChimenyCakeOven();
-        PancakeOven pancakeOven = new PancakeOven();
+        Oven chimenyCakeOven = new ChimenyCakeOven();
+        Oven pancakeOven = new PancakeOven();
+
+        cakeShop.addAllOven(List.of(chimenyCakeOven,pancakeOven));
+//        cakeShop.addAllOven(List.of(chimenyCakeOven));
 
         cakeShop.addAllCake(List.of(pancake1,pancake2,chimneyCake1,chimneyCake2));
 

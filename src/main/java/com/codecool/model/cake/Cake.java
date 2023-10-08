@@ -1,19 +1,21 @@
 package com.codecool.model.cake;
 
-public class Cake {
+import com.codecool.model.oven.Oven;
+import com.codecool.model.oven.OvenType;
+
+public abstract class Cake {
     CakeType cakeType;
     Flavour flavour;
     double price;
-
-
     boolean isFried;
 
-
-    public Cake(Flavour flavour, double price) {
+    public Cake(CakeType cakeType, Flavour flavour, double price) {
+        this.cakeType = cakeType;
         this.flavour = flavour;
         this.price = price;
         this.isFried = false;
     }
+
     public boolean isFried() {
         return isFried;
     }
@@ -25,4 +27,7 @@ public class Cake {
     public double getPrice() {
         return price + flavour.cent;
     }
+
+    public abstract OvenType getOvenNeeded();
+
 }
